@@ -15,15 +15,31 @@ open index.html          # macOS
 
 ## Git & GitHub Workflow
 
-This project uses clean, descriptive commit messages. Always commit and push after meaningful changes:
+**After every meaningful change, commit and push to GitHub.** This is non-negotiable — we never leave work uncommitted. The remote is the source of truth for reverting if something breaks.
 
 ```bash
-git add index.html game.js          # stage specific files only
-git commit -m "descriptive message"
+git add index.html game.js          # stage specific files only (never git add -A)
+git commit -m "short imperative summary of what and why"
 git push
 ```
 
 Remote: `https://github.com/mzj-85/retro-shooter`
+
+### Commit message rules
+- Start with an imperative verb: `Add`, `Fix`, `Improve`, `Remove`, `Refactor`
+- First line ≤ 72 characters, describes *what* changed and *why* (not how)
+- If multiple logical changes were made, use a short body paragraph after a blank line
+- Always include the co-author trailer:
+  ```
+  Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>
+  ```
+
+### When to commit
+- After implementing any new feature or mechanic
+- After fixing a bug
+- Before starting a risky refactor (checkpoint)
+- After a refactor is complete and working
+- Any time the game is in a clean, playable state worth preserving
 
 ## Architecture
 
